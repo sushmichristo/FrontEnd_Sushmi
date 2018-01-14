@@ -1,0 +1,71 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>Employee Form</h1>
+    <form (ngSubmit)="saveEmployee()" #registerForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name"
+               required
+               [(ngModel)]="employee.name" name="name"
+               #name="ngModel"/>
+        
+      </div>
+
+      <div class="form-group">
+        <label for="designation">Designation</label>
+        <input type="text" class="form-control" id="designation"
+               [(ngModel)]="employee.designation" name="designation" #name="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="salary">Salary</label>
+        <input type="text" class="form-control" id="salary"
+               required
+               [(ngModel)]="employee.salary" name="salary"
+               #name="ngModel"/>
+       
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!registerForm.form.valid" (click)="saveEmployee()">Submit</button>
+    
+      &nbsp;&nbsp;
+     
+    </form>
+  </div>
+
+</div>
+
+
+<hr>
+<style>
+  .no-style .ng-valid {
+  border-left: 1px  solid #CCC
+}
+
+  .no-style .ng-invalid {
+  border-left: 1px  solid #CCC
+}
+</style>
+
+<div *ngIf="statusMessage" class="modal fade slide" id="successModal" ref="successModal">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title center">Info</h4>
+          </div>
+          <div class="modal-body">
+
+              <p>{{statusMessage}}</p>
+
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+

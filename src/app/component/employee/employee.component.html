@@ -1,0 +1,20 @@
+<div *ngIf="selectedEmp">
+    <div class="container">
+        <header class="page-Header">
+        <h3>
+            {{ selectedEmp.name | uppercase }} Details
+        </h3>
+      </header>
+      </div>
+      <br/><br/>
+  <div class="container">
+    <table  class="table table-striped">
+      <tr><td><strong>Id</strong></td><td>{{selectedEmp.id}}</td></tr>
+      <tr><td><strong>Name</strong></td><td>{{selectedEmp.name}}</td></tr>
+      <tr><td><strong>Designation</strong></td><td>{{selectedEmp.designation}}</td></tr>
+      <tr><td><strong>Salary</strong></td><td>{{selectedEmp.salary}}</td></tr>
+    </table>
+  </div>
+  <button class="btn btn-primary" (click)="goBack()"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp;&nbsp;Back</button>
+</div>
+
